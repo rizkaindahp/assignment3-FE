@@ -1,0 +1,73 @@
+<div class="container m-auto">
+    <div class="row">
+        <img class="col-12 col-md-8" src="../../assets/banner/register.jpg" alt="login">
+        <div class="card col-12 col-md-4 py-lg-4">
+            <div class="avatar">
+              <img src="../../assets/banner/login-logo.png" width="100" height="70" class="d-inline-block align-center" alt="">
+              <h6 class="justify-content-center">Create Your Account</h6>
+            </div>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+              <div class="form-group">
+                <input
+                  type="username"
+                  class="form-control"
+                  id="exampleInputUsername1"
+                  aria-describedby="usernameHelp"
+                  placeholder="Username"
+                  name="username"
+                  required
+                  formControlName="username">
+                <small *ngIf="!registerForm.get('username').valid && registerForm.get('username').touched"
+                  class="help-block">Please Fiil a Username!
+                </small>
+              </div>
+              <div class="form-group">
+                <input
+                  type="fullname"
+                  class="form-control"
+                  id="exampleInputFullname1"
+                  aria-describedby="fullnameHelp"
+                  placeholder="Fullname"
+                  name="fullname"
+                  required
+                  formControlName="fullname">
+                <small *ngIf="!registerForm.get('fullname').valid && registerForm.get('fullname').touched"
+                  class="help-block">Please Fiil a Fullname!
+                </small>
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                  name="email"
+                  required
+                  formControlName="email">
+                <small *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched"
+                  class="help-block">Please Fiil a Valid Email!
+                </small>
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                  name="password"
+                  required
+                  formControlName="password">
+                <small *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched"
+                  class="help-block">Password Must be 6-10 character
+                </small>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

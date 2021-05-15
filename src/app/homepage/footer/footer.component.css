@@ -1,0 +1,50 @@
+footer{
+    background-color: aquamarine;
+    height: 200px;
+}
+.footer-icon {
+    margin:50px auto;
+    width:140px;
+    text-align:center;
+}
+.icon {
+    position:relative;
+    text-align:center;
+    width:0px;
+    height:0px;
+    padding:20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color:#FFFFFF;
+}
+.icon i {
+    font-size:20px;
+    position:absolute;
+    left:9px;
+    top:10px;
+}
+.icon.social {
+    float:left;
+    margin:0 5px 0 0;
+    cursor:pointer;
+    background:#a379df ;
+    color:#262626;
+    transition: 0.5s;
+}
+.icon.social:hover {
+    background:#da7373 ;
+    color:#6d6e71;
+    transition: 0.5s;
+}
+.icon.social.fb i {
+    left:13px;
+    top:10px;
+}
+.icon.social.git i {
+    left:11px;
+}
+.icon.social.in i {
+    left:11px;
+}

@@ -1,0 +1,14 @@
+<div class="row my-4 d-flex justify-content-between">
+    <div class="card col-md-3 mx-1 my-1" data-aos="zoom-in-up" *ngFor="let product of products">
+        <img [src]="product.imagePath" data-aos="zoom-in" class="card-img-top" alt="product">
+        <div class="card-body">
+          <h5 class="card-text">{{product.name}}</h5>
+          <p>IDR {{product.price}} </p>
+        </div>
+        <div class="row d-flex justify-content-around">
+          <a href="#" class="btn btn-info">Add to Cart</a>
+          <a href="#" class="btn btn-outline-secondary" (click)="getDetailProduct(product.id)" routerLink="/product/ + products._id">Detail</a>
+        </div>
+    </div>
+</div>
+<!-- src="/assets/banner/{{item.imagePath}}" -->

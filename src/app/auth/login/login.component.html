@@ -1,0 +1,53 @@
+<div class="container m-auto">
+  <div class="d-flex justify-content-center text-danger" *ngIf="isLoading">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="row">
+      <div class="card col-12 col-md-4">
+          <div class="avatar">
+            <img src="../../assets/banner/login-logo.png" width="100" height="70" class="d-inline-block align-center" alt="">
+            <h6 class="justify-content-center">Please Login</h6>
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" *ngIf="!isLoading">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Email"
+                name="email"
+                required
+                formControlName="email">
+              <small *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"
+                class="help-block">Please Fiil a Valid Email!
+              </small>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+                name="password"
+                required
+                formControlName="password">
+              <small *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched"
+                class="help-block">Password Must be 6-10 character
+              </small>
+            </div>
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+      </div>
+    <img class="col-12 col-md-8" src="../../assets/banner/register.jpg" alt="login">
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.login-btn {
+    border-radius: 20px;
+}
+
+.fa{
+    font-size: 30px;
+    color: rgb(139, 130, 140);
+    padding-right: 20px;
+}
+
+.fa:hover{
+    color: greenyellow;
+}

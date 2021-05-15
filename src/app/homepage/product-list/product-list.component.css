@@ -1,0 +1,13 @@
+.card {
+    border-radius: 15px;
+    width: 15rem;
+}
+
+img {
+    border-radius: 15px;
+    height: 200px;
+}
+
+p {
+    color: red;
+}

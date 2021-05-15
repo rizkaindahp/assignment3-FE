@@ -1,0 +1,11 @@
+<ngb-carousel data-aos="fade-left" *ngIf="images">
+  <ng-template ngbSlide *ngFor="let item of carousel">
+    <div class="picsum-img-wrapper">
+      <img [src]="item.imagePath" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>{{item.tittle}}</h3>
+      <p>{{item.subtitle}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

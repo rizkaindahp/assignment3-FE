@@ -3,8 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseURL: 'https://assignment3-rizkastore.herokuapp.com/',
 };
+
+// export const baseURL = 'https://assignment3-rizkastore.herokuapp.com/';
 
 /*
  * For easier debugging in development mode, you can import the following file
