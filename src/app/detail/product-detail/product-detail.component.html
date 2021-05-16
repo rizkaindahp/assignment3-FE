@@ -1,27 +1,25 @@
 <body  data-aos="fade-up" data-aos-duration="1500" >
     <section class="container">
         <div class="row" data-aos="fade-up" data-aos-duration="1500" >
-
           <div class=" col-md-8 mx-auto">
             <div class="card shadow flex-md-row my-5 p-4 styleProduct">
           <div class="col-md-6 mb-4 mb-md-0">
               <div class="row mx-1">
                 <div class="col-md-12 mb-0 zoomImage">
-                      <img src="{{products.imagePath}}"
-                        class="img-fluid rounded">
+                  <img src="{{product?.imagePath}}" class="img-fluid rounded">
                 </div>
               </div>
           </div>
           <div class="col-md-6">
-            <h5 class="text-uppercase" >{{products.name}}</h5>
-            <p><span class="mr-1"><strong>${{products.price}}</strong></span></p>
-            <p class="description">{{products.description}}</p>
+            <h5 class="text-uppercase" >{{product?.name}}</h5>
+            <p><span class="mr-1"><strong>${{product?.price}}</strong></span></p>
+            <p class="description">{{product?.description}}</p>
             <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
                   <tr>
                     <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
-                    <td class="text-uppercase">{{products.name}}</td>
+                    <td class="text-uppercase">{{product?.name}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -34,8 +32,3 @@
 
   </section>
 </body>
-
-    <!-- <h4>{{product.name}}</h4>
-    <h5>{{product.price}}</h5>
-    <p>{{product.stock}}</p>
-    <p>{{product.description}}</p> -->

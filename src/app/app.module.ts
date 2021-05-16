@@ -14,7 +14,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
-import { DetailProductComponent } from './detail-product/detail-product.component';
+// import { DetailProductComponent } from './detail-product/detail-product.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { AuthComponent } from './auth/auth.component';
@@ -34,7 +34,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     CartComponent,
     CheckoutComponent,
     HomepageComponent,
-    DetailProductComponent,
     CategoriesComponent,
     PaginationComponent,
     AuthComponent

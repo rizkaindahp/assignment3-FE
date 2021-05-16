@@ -20,10 +20,11 @@ export class ProductListService {
     );
   }
 
-  public getDetailProduct(_id): Observable<any> {
-    console.log(_id);
-    return this.http.get<any>(`${environment.baseURL}product/${_id}`)
-  };
+  getDetailProduct(_id: string) : Observable<any> {
+    return this.http.get<any>(`${environment.baseURL}product/${_id}`).pipe(map(res => {
+      return res
+    }))
+  }
 
   addToCart(product: string, quantity: number){
     return this.http.post<any>(`${environment.baseURL}cart/addtocart/push`, {

@@ -28,10 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin(loginForm): void{
-    // if (loginForm.invalid) {
-    //   return;
-    // }
-    // this.authService.login(loginForm.value.email, loginForm.value.password);
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value);
     }
@@ -52,3 +48,8 @@ export class LoginComponent implements OnInit {
 //     }
 //   });
 // }
+
+// if (loginForm.invalid) {
+    //   return;
+    // }
+    // this.authService.login(loginForm.value.email, loginForm.value.password);

@@ -4,15 +4,15 @@ import { ProductListComponent } from './homepage/product-list/product-list.compo
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { DetailProductComponent } from './detail-product/detail-product.component';
+// import { DetailProductComponent } from './detail-product/detail-product.component';
 import { CommonModule } from '@angular/common';
-// import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '', component: HomepageComponent },
   { path: 'product', component: ProductListComponent},
-  { path: 'product/:_id', component: DetailProductComponent },
+  { path: 'product/:_id', loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule) },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
@@ -21,6 +21,6 @@ const routes: Routes = [
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  // providers: [AuthGuard]
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
