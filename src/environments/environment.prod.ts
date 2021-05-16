@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: false,
+  baseURL: 'https://assignment3-rizkastore.herokuapp.com/',
 };

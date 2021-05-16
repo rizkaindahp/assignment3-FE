@@ -6,7 +6,7 @@ import { AuthLogin, User } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
-const BACKEND_URL = environment.baseURL + '/auth/';
+// const BACKEND_URL = environment.baseURL + '/auth/';
 
 @Injectable({
   providedIn: 'root'

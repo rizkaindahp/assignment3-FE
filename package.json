@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node server.js",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -27,6 +27,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.5.0",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
