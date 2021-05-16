@@ -16,3 +16,13 @@ input.ng-invalid.ng-touched{
 small {
     color: red;
 }
+
+.loading {
+    position: fixed;
+    margin: auto;
+    z-index: 10;
+    top: 0;
+    margin-top: 200px;
+    width: 200px;
+    height: 200px;
+}

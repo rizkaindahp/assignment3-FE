@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  isLoading = false;
   registerForm: FormGroup;
   user : any;
   constructor( public fb : FormBuilder, private authService: AuthService) {}
@@ -27,5 +28,6 @@ export class RegisterComponent implements OnInit {
   onSubmitRegister(): void{
     this.user = this.registerForm.value;
       this.authService.register(this.user)
+      this.isLoading = true;
   }
 }

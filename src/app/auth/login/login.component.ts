@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     });
     this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
       authStatus => {
-        this.isLoading = false;
+        this.isLoading = true;
       }
     );
   }
@@ -30,26 +30,12 @@ export class LoginComponent implements OnInit {
   onSubmitLogin(loginForm): void{
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value);
+      this.isLoading = true;
     }
-
   }
 
   ngOnDestroy(): void {
     this.authStatusSub.unsubscribe();
+    this.isLoading = true;
   }
 }
-
-// if (this.loginForm.valid) {
-//   this.authService.login(this.loginForm.value).subscribe((response: any) => {
-//     if (response.success) {
-//       console.log(response);
-//     } else {
-//       console.log(response);
-//     }
-//   });
-// }
-
-// if (loginForm.invalid) {
-    //   return;
-    // }
-    // this.authService.login(loginForm.value.email, loginForm.value.password);
