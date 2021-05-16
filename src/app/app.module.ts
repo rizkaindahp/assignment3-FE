@@ -19,7 +19,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-// import { AuthInterceptor } from './auth/auth-interceptor';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 
 
@@ -48,7 +48,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserAnimationsModule,
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
