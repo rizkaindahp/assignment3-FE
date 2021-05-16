@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8), ])
     });
-    // this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
-    //   authStatus => {
-    //     this.isLoading = false;
-    //   }
-    // );
+    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
+      authStatus => {
+        this.isLoading = false;
+      }
+    );
   }
 
   onSubmitLogin(loginForm): void{
@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // ngOnDestroy(): void {
-  //   this.authStatusSub.unsubscribe();
-  // }
+  ngOnDestroy(): void {
+    this.authStatusSub.unsubscribe();
+  }
 }
 
 // if (this.loginForm.valid) {

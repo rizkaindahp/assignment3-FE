@@ -21,6 +21,7 @@ export class ProductListService {
   }
 
   public getDetailProduct(_id): Observable<any> {
+    console.log(_id);
     return this.http.get<any>(`${environment.baseURL}product/${_id}`)
   };
 

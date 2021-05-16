@@ -30,8 +30,16 @@ export class AuthService {
         console.log(this.isAuthenticated);
         this.router.navigate(['/']);
       }
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Login Success',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }, error => {
       this.authStatusListener.next(false);
+      Swal.fire('Sorry', error.error.message, 'error')
   })
   }
 
@@ -41,27 +49,47 @@ export class AuthService {
   getAuthStatusListener(): any {
     return this.authStatusListener.asObservable();
   }
-  
+  getToken(): any {
+    return this.token;
+  }
+  getUserId(): any {
+    return this.userId;
+  }
+
   register(user : User) {
     return this.http.post<any>(`${environment.baseURL}auth/register`, user).subscribe((res: any) => {
       Swal.fire('Welcome to Rizka Store','You can login now','success')
       this.router.navigate(['']);
     },
     err => {
-      Swal.fire('Sorry',err.error.message,'error')
+      Swal.fire('Sorry', err.error.message, 'error')
     })
   }
+  private clearAuthData(): any {
+    localStorage.removeItem('token');
+    localStorage.removeItem('expiration');
+    localStorage.removeItem('userId');
+  }
+  logout(): any {
+    this.token = null;
+    this.isAuthenticated = false;
+    this.authStatusListener.next(false);
+    this.userId = null;
+    clearTimeout(this.tokenTimer);
+    this.clearAuthData();
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Logout Success',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigate(['/']);
+  }
+
 }
 
-  // getToken(): any {
-  //   return this.token;
-  // }
 
-
-
-  // getUserId(): any {
-  //   return this.userId;
-  // }
 
 
 
@@ -117,15 +145,7 @@ export class AuthService {
   //   }
   // }
 
-  // logout(): any {
-  //   this.token = null;
-  //   this.isAuthenticated = false;
-  //   this.authStatusListener.next(false);
-  //   this.userId = null;
-  //   clearTimeout(this.tokenTimer);
-  //   this.clearAuthData();
-  //   this.router.navigate(['/']);
-  // }
+
 
   // private setAuthTimer(duration: number): any {
   //   console.log('setting timer: ' + duration);
@@ -140,11 +160,6 @@ export class AuthService {
   //   localStorage.setItem('userId', userId);
   // }
 
-  // private clearAuthData(): any {
-  //   localStorage.removeItem('token');
-  //   localStorage.removeItem('expiration');
-  //   localStorage.removeItem('userId');
-  // }
 
   // private getAuthData(): any {
   //   const token = localStorage.getItem('token');

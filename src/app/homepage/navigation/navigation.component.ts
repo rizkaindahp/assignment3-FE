@@ -33,11 +33,11 @@ export class NavigationComponent implements OnInit {
   }
 
   onLogout(): void {
-    // this.authService.logout();
+    this.authService.logout();
   }
 
-  // ngOnDestroy(): void {
-  //   this.authListenerSubs.unsubscribe();
-  // }
+  ngOnDestroy(): void {
+    this.authListenerSubs.unsubscribe();
+  }
 
 }
