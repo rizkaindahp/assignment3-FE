@@ -12,19 +12,22 @@
           </div>
           <div class="col-md-6">
             <h5 class="text-uppercase" >{{product?.name}}</h5>
-            <p><span class="mr-1"><strong>${{product?.price}}</strong></span></p>
+            <p><span class="mr-1"><strong>IDR {{product?.price}}</strong></span></p>
             <p class="description">{{product?.description}}</p>
+            <p class="description">{{product?.stock}}</p>
             <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
+                    <th class="pl-0 w-25" scope="row"><strong>Product</strong></th>
                     <td class="text-uppercase">{{product?.name}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <hr>
+            <button type="button" class="btn btn-primary btn-md mr-1 mb-2"  (click)="addCart(this.data._id) "routerLink="/cart">Buy now</button>
+            <button type="button" class="btn btn-success btn-md mr-1 mb-2" (click)="addCart(this.data._id)"><i class="fa fa-shopping-cart pr-2"></i>Add to cart</button>
           </div>
             </div>
           </div>
