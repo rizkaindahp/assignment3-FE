@@ -17,19 +17,11 @@ export class NavigationComponent implements OnInit {
     this.userIsAuthenticated = this.authService.getIsAuth();
     console.log(this.userIsAuthenticated);
     console.log(this.nama);
-
-
-  this.authListenerSubs = this.authService
-    .getAuthStatusListener()
-    .subscribe(isAuthenticated => {
-      this.userIsAuthenticated = isAuthenticated;
-  });
-
-    // this.authListenerSubs = this.authService
-    //   .getAuthStatusListener()
-    //   .subscribe(isAuthenticated => {
-    //     this.userIsAuthenticated = isAuthenticated;
-    //   });
+    this.authListenerSubs = this.authService
+      .getAuthStatusListener()
+      .subscribe(isAuthenticated => {
+        this.userIsAuthenticated = isAuthenticated;
+    });
   }
 
   onLogout(): void {

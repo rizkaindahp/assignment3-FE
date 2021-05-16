@@ -6,17 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  // categories = [
-  //   {
-  //       nameCategory: 'Handphone',
-  //   },
-  //   {
-  //       nameCategory: 'Laptop',
-  //   },
-  //   {
-  //       nameCategory: 'Hardisk',
-  //   }
-  // ];
   constructor() { }
 
   ngOnInit(): void {

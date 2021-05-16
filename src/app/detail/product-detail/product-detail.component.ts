@@ -13,7 +13,6 @@ export class ProductDetailComponent implements OnInit {
   constructor( private productListService: ProductListService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    // this._id = this.route.snapshot.paramMap.get('id');
     this.route.paramMap.subscribe((params: ParamMap) => {
       this._id = params.get('_id')
       console.log(this._id)
@@ -23,8 +22,6 @@ export class ProductDetailComponent implements OnInit {
 
   getById(): void{
     this.productListService.getDetailProduct(this._id).subscribe(data => {
-      // console.log(data);
-
       this.product = data.data;
       console.log(this.product);
     });
